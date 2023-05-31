@@ -1,7 +1,7 @@
 # Actividad1
 En esta primer actividad ejecutaremos comandos de Terraform y analizaremos los archivos que
 forman parte de un proyecto.
-Se hara uso de contenedores de Docker (no se requiere conocimiento previo) para demostrar
+Se hará uso de contenedores de Docker (no se requiere conocimiento previo) para demostrar
 la creación y destrucción de Infraestructura.
 
 # Pre-requisitos
@@ -24,6 +24,7 @@ la creación y destrucción de Infraestructura.
 `docker image ls`
 `docker container ls`
 2. Ejecutar el terraform init y analizar que sucede en la terminal y con los archivos
+`cd actividad1`
 `terraform init`
 3. Analizar que sucede al ejecutar terraform plan
 `terraform plan`
@@ -34,7 +35,11 @@ la creación y destrucción de Infraestructura.
 `docker container ls`
 6. Abrir la página web para validar que se está ejecutando
 7. Destruir la Infraestructura
-`terraform destoy`
+`terraform destroy`
 8. Validar que no existen recursos de docker
 `docker image ls`
 `docker container ls`
+### 3 Limpiar archivos
+1. Eliminar el repositorio clonado
+`cd ..`
+`rm -rf actividad1`
