@@ -12,7 +12,7 @@ En esta actividad crearemos una subnetwork dentro de una vpc (esta vpc ya existe
 5. Clonar este repositorio ejecutando el siguiente conmando en la terminal: <br/>
 `git clone -b actividad2 https://github.com/veram96/clases-terraform.git actividad2`<br/>
 6. Abrir el repositorio clonado con el siguiente comando:<br/>
-`cloudshell open-workspace actividad1`<br/>
+`cloudshell open-workspace actividad2`<br/>
 
 ### 2 Ejecución de la actividad
 1. Entrar al [Registry de Terraform](https://registry.terraform.io/browse/providers)
