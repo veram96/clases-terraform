@@ -21,20 +21,29 @@ En esta actividad crearemos una network y una subnetwork.
 y agregarlas en el archivo **main.tf**
 4. Seleccionar la pestaña Documentacion para obtener la configuración que necesita el bloque `provider`.
 
-### 3 Creando la VPC network
-1. Buscar en el menú izquierdo el recurso referente a vpc.
-> **Hint**
+### 3 Configurando la VPC network
+1. Buscar en el menú izquierdo el recurso referente a vpc network.
+> **Info**
 > Todo lo referente a *VPC networks* y *subnetworks* se encuentra en el apartado de Compute Engine
-6. Agregar en el archivo **main.tf** la configuración para crear una subnetwork (usar solamente los required arguments)
+2. Agregar en el archivo **main.tf** la configuración para crear una VPC network (custom mode)
+  - LLenar los siguientes campos de la siguiente manera:
+      - nombre: "[USERNAME]-vpc"
+
+### 4 Configurando la Subnetwork
+1. Buscar en el menú izquierdo el recurso referente a subnetwork.
+> **Info**
+> Todo lo referente a *VPC networks* y *subnetworks* se encuentra en el apartado de Compute Engine
+2. Agregar en el archivo **main.tf** la configuración para crear una subnetwork (utilizar solo *argumentos requeridos*)
   - LLenar los siguientes campos de la siguiente manera:
     - nombre: "[USERNAME]-subnetwork"
     - region: "us-east4"
-    - network: "vpc-curso-terraform"
-    - En el campo "ip_cidr_range" usaremos el valor indicado en el archivo proporcinado por el ponente.
-7. Crear la Infraestructura
-8. Destruir la Infraestructura
+    - ip_cidr_range: "10.0.10.0/24"
+    - network: ??????
 
-### 3 Limpiar archivos
+### 5 Creando la infraestructura
+1. Ejecutar los comandos de Terraform necesarios para crear la infraestructura.
+
+### 6 Limpiar archivos
 Eliminar el repositorio clonado<br/>
 `cd ..`<br/>
 `rm -rf actividad1`
