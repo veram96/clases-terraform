@@ -23,7 +23,7 @@ y agregarlas en el archivo **main.tf**
 
 ### 3 Configurando la VPC network
 1. Buscar en el menú izquierdo el recurso referente a vpc network.
-> **Info**
+> **Note**
 > Todo lo referente a *VPC networks* y *subnetworks* se encuentra en el apartado de Compute Engine
 2. Agregar en el archivo **main.tf** la configuración para crear una VPC network (custom mode)
   - LLenar los siguientes campos de la siguiente manera:
@@ -31,7 +31,7 @@ y agregarlas en el archivo **main.tf**
 
 ### 4 Configurando la Subnetwork
 1. Buscar en el menú izquierdo el recurso referente a subnetwork.
-> **Info**
+> **Note**
 > Todo lo referente a *VPC networks* y *subnetworks* se encuentra en el apartado de Compute Engine
 2. Agregar en el archivo **main.tf** la configuración para crear una subnetwork (utilizar solo *argumentos requeridos*)
   - LLenar los siguientes campos de la siguiente manera:
