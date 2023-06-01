@@ -1,7 +1,7 @@
 # Actividad2
 En esta actividad aprenderemos a usar la documentación para escribir nuestro
 primer proyecto de terraform.
-En esta actividad crearemos una subnetwork dentro de una vpc (esta vpc ya existe)
+En esta actividad crearemos una network y una subnetwork.
 
 # Instrucciones
 ### 1 Preparando el ambiente
@@ -14,18 +14,22 @@ En esta actividad crearemos una subnetwork dentro de una vpc (esta vpc ya existe
 6. Abrir el repositorio clonado con el siguiente comando:<br/>
 `cloudshell open-workspace actividad2`<br/>
 
-### 2 Ejecución de la actividad
+### 2 Preparando el proyecto de Terraform
 1. Entrar al [Registry de Terraform](https://registry.terraform.io/browse/providers)
 2. Seleccionar "Google Cloud Platform" para abrir la documentación del provider de google
-3. Obtener las lineas de código de los bloques `terraform`, `required_proviers` y `provider`
+3. Obtener las lineas de código de los bloques `terraform`, `required_providers` y `provider`
 y agregarlas en el archivo **main.tf**
-4. Seleccionar la pestaña Documentacion y obtener la configuración que necesita el bloque `provider`
-5. Buscar en el menú izquierdo el recurso referente a subnetwork.
+4. Seleccionar la pestaña Documentacion para obtener la configuración que necesita el bloque `provider`.
+
+### 3 Creando la VPC network
+1. Buscar en el menú izquierdo el recurso referente a vpc.
+> **Hint**
+> Todo lo referente a *VPC networks* y *subnetworks* se encuentra en el apartado de Compute Engine
 6. Agregar en el archivo **main.tf** la configuración para crear una subnetwork (usar solamente los required arguments)
   - LLenar los siguientes campos de la siguiente manera:
-    - nombre: [USERNAME]-subnetwork
-    - region: us-east4
-    - network: 
+    - nombre: "[USERNAME]-subnetwork"
+    - region: "us-east4"
+    - network: "vpc-curso-terraform"
     - En el campo "ip_cidr_range" usaremos el valor indicado en el archivo proporcinado por el ponente.
 7. Crear la Infraestructura
 8. Destruir la Infraestructura
