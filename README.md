@@ -32,12 +32,12 @@ y agregarlas en el archivo **main.tf**
 ### 4 Configurando la Subnetwork
 1. Buscar en el menú izquierdo el recurso referente a subnetwork.
 > **Note**
-> Todo lo referente a *VPC networks* y *subnetworks* se encuentra en el apartado de Compute Engine
+> Todo lo referente a *VPC networks* y *subnetworks* se encuentra en el apartado de Compute Engine<br/>
 2. Agregar en el archivo **main.tf** la configuración para crear una subnetwork (utilizar solo *argumentos requeridos*)
   - Llenar los siguientes campos de la siguiente manera:
     - Nombrar la Subnetwork utilizando la variable prefix que se encuentra en el archivo maint.tf de tal forma que el nombre final quede de la siguiente manera: **TU_USERNAME-subnetwork**
 > **Note**
-> En terraform podemos concatenar texto y variables: "${var.variable}-subnetwork"
+> En terraform podemos concatenar texto y variables: "${var.variable}-subnetwork"<br/>
     - region: "us-east4"
     - ip_cidr_range: "10.0.10.0/24"
     - network: **Aplicar el uso del attribute de la vpc**
