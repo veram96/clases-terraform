@@ -26,7 +26,7 @@ y agregarlas en el archivo **main.tf**
 > **Note**
 > Todo lo referente a *VPC networks* y *subnetworks* se encuentra en el apartado de Compute Engine
 2. Agregar en el archivo **main.tf** la configuración para crear una VPC network (custom mode)
-  - LLenar los siguientes campos de la siguiente manera:
+  - Llenar los siguientes campos de la siguiente manera:
       - nombre: "[USERNAME]-vpc"
 
 ### 4 Configurando la Subnetwork
@@ -34,7 +34,7 @@ y agregarlas en el archivo **main.tf**
 > **Note**
 > Todo lo referente a *VPC networks* y *subnetworks* se encuentra en el apartado de Compute Engine
 2. Agregar en el archivo **main.tf** la configuración para crear una subnetwork (utilizar solo *argumentos requeridos*)
-  - LLenar los siguientes campos de la siguiente manera:
+  - Llenar los siguientes campos de la siguiente manera:
     - nombre: "[USERNAME]-subnetwork"
     - region: "us-east4"
     - ip_cidr_range: "10.0.10.0/24"
