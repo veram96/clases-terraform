@@ -1,50 +1,26 @@
-# Actividad4
-Esta actividad estara seccionada en 
+# Actividad0
+Esta actividad es para probar si estamos listos para poder ejecutar Terraform en nuestra máquina
 
+# 1. Clonar Repositorio
+1. Abrir VSCode
+2. Clonar el repositorio con VSCode
+`https://github.com/veram96/clases-terraform.git`
 
-# Preparando ambiente (En Grupo)
-1. Descargar el [siguiente repositorio](https://github.com/veram96/clases-terraform/tree/actividad4)
-2. Extraer el archivo y mover la carpeta a Documents
-3. Abrir la carpeta con VSCode.
+# 2. Configurar gcloud
+1. Ejecutar el comando `gcloud auth list` <br/>
+Debe aparecer tu correo corporativo con un asterisco a la izquierda
+  - Si aparece tu mail corporativo, pero no tiene un asterisco a la izquierda:  `gcloud config set account TU_CORREO`
+  - Si no aparece tu mail corporativo: `gcloud auth login`
+2. Ejecutar `gcloud config list`<br/>
+Debes tener el mismo *project*, *region* y *zone* que se muestra en clase.
+  - Si en tu configuración difiere alguno de los elementos mencionados, ejecutar comando correspondiente:<br/>
+  `gcloud config set project PROYECTO_MOSTRADO`<br/>
+  `gcloud config set compute/region REGION_MOSTRADA`<br/>
+  `gcloud config set compute/zona ZONA_MOSTRADA`
+3. Ejecutar el comando `gcloud auth application-default login`
 
-
-# Sección 4.1 (En BreakRooms)
-> **Note**
-> Deberán realizar los siguientes pasos en equipo, pero basta con que un usuario (líder) sea quien
-este presentando pantalla. **Usar la herramienta LiveShare de VSCode**.<br/>
-En esta actividad también se calificará su trabajo en equipo, cada integrante del equipo calificará el desempeño
-de sus compañeros de breakroom en una escala del 1 al 5 y será de manera anónima.
-1. Asignar a las variables que se encuantran en el archivo `main.tf` los valores indicados en la clase
-2. Asignar al bloque `backend` que se encuantra en el archivo `main.tf` los valores indicados en la clase
-3. Completar la configuración para la creación de:
-  - Una VPC Custom
-  - Una Subnet
-  > **Note**
-  > Usar la variable `prefix` para complementar el nombre<br/>
-  Usar sólo los documentos marcados en la documentación como `required`<br/>
-  Aquí está el [link al sitio de Terraform](https://registry.terraform.io/browse/providers)
-4. Agregar a la configuración de la Instancia que ya se encuentra en el archivo `main.tf` los datos para que sea 
-creada en la VPC y Subnetwork que agregaste en el paso anterior.
-5. Crear un Output que devuelva la ip interna de la instancia (opcional)
-  > **Note**
-  > Recuerda que en la documentación puedes consultar información de ayuda. Si no logras dar con la
-  documentación de las Instancias de GCP [aquí te dejo el link directo :(](https://registry.terraform.io/providers/hashicorp/google/latest/docs/resources/compute_instance)
-6. Desplegar Infraestructura
-
-
-# Sección 4.2 (En BreakRooms)
-1. Crear un archivo llamado `terraform.tfvars` y asignar valor a las variables del archivo `main.tf`
-  > **Note**
-  > Favor de eliminar las lineas `default = `  de cada variable del archivo `main.tf`<br/>
-  El archivo `.gitignore` ya existe en el repo, no es necesario modificarlo
-2. Reorganizar el *configuration file* `main.tf` en los distintos archivos vistos en clase
-![Diagrama de archivos](assets/diagrama.png?raw=true "Diagrama")
-3. Al aplicar un `terraform plan` debería salir que no hay ningún cambio por hacer.
-
-
-# Guardar evidencia (En grupo)
-> **Note**
-> Sólo el líder de cada breakroom
-1. Crear un repositorio en Github
-2. Subir el proyecto de Terraform al repositorio de Github que creaste.
-3. Agregar al repositorio a tus compañeros de breakroom y a los siguientes usuarios `mavera@liverpool.com.mx`, `shermidar@liverpool.com.mx` y `eczepedah@liverpool.com.mx`
+# 3. Levantar Infraestructura
+1. En el archivo `main.tf` sustituir *TU-USERNAME* por tu usuario.
+2. En el archivo `main.tf` agregar el *project* en la línea 12.
+1. Ejecutar comando `terraform init`
+2. Ejecutar comando `terraform apply`
