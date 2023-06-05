@@ -1,54 +1,50 @@
-# Actividad3
-Replicaremos lo que se hizo en la actividad2 para practicar y adicionalmente integraremos variables y outputs.
-Alguien compartira pantalla para realizar los pasos 1-4.
+# Actividad4
+Esta actividad estara seccionada en 
 
-# Instrucciones
-### 1 Preparando el ambiente
-1. Ingresar a GCP [aquí](https://console.cloud.google.com/welcome?project=crp-dev-cloudsrv-test&supportedpurview=project).
-2. Una vez dentro, abrir CloudShell.
-3. Activar el ephemeral mode (si no está activo).
-4. Abrir el Editor y la Terminal
-5. Clonar este repositorio ejecutando el siguiente conmando en la terminal: <br/>
-`git clone -b actividad3 https://github.com/veram96/clases-terraform.git actividad3`<br/>
-6. Abrir el repositorio clonado con el siguiente comando:<br/>
-`cloudshell open-workspace actividad3`<br/>
 
-### 2 Preparando el proyecto de Terraform
-1. Entrar al [Registry de Terraform](https://registry.terraform.io/browse/providers)
-2. Seleccionar "Google Cloud Platform" para abrir la documentación del provider de google
-3. Obtener las lineas de código de los bloques `terraform`, `required_providers` y `provider`
-y agregarlas en el archivo **main.tf**
-4. Seleccionar la pestaña Documentacion para obtener la configuración que necesita el bloque `provider`.
+# Preparando ambiente (En Grupo)
+1. Descargar el [siguiente repositorio](https://github.com/veram96/clases-terraform/tree/actividad4)
+2. Extraer el archivo y mover la carpeta a Documents
+3. Abrir la carpeta con VSCode.
 
-### 3 Configurando la VPC network
-1. Buscar en el menú izquierdo el recurso referente a vpc network.
+
+# Sección 4.1 (En BreakRooms)
 > **Note**
-> Todo lo referente a *VPC networks* y *subnetworks* se encuentra en el apartado de Compute Engine
-2. Agregar en el archivo **main.tf** la configuración para crear una VPC network (custom mode)
-  - Nombrar la VPC utilizando la variable prefix que se encuentra en el archivo maint.tf de tal forma que el nombre final quede de la siguiente manera: **TU_USERNAME-vpc**
+> Deberán realizar los siguientes pasos en equipo, pero basta con que un usuario (líder) sea quien
+este presentando pantalla. **Usar la herramienta LiveShare de VSCode**.<br/>
+En esta actividad también se calificará su trabajo en equipo, cada integrante del equipo calificará el desempeño
+de sus compañeros de breakroom en una escala del 1 al 5 y será de manera anónima.
+1. Asignar a las variables que se encuantran en el archivo `main.tf` los valores indicados en la clase
+2. Asignar al bloque `backend` que se encuantra en el archivo `main.tf` los valores indicados en la clase
+3. Completar la configuración para la creación de:
+  - Una VPC Custom
+  - Una Subnet
   > **Note**
-  > En terraform podemos concatenar texto y variables: "${var.variable}-vpc"
+  > Usar la variable `prefix` para complementar el nombre<br/>
+  Usar sólo los documentos marcados en la documentación como `required`<br/>
+  Aquí está el [link al sitio de Terraform](https://registry.terraform.io/browse/providers)
+4. Agregar a la configuración de la Instancia que ya se encuentra en el archivo `main.tf` los datos para que sea 
+creada en la VPC y Subnetwork que agregaste en el paso anterior.
+5. Crear un Output que devuelva la ip interna de la instancia (opcional)
+  > **Note**
+  > Recuerda que en la documentación puedes consultar información de ayuda. Si no logras dar con la
+  documentación de las Instancias de GCP [aquí te dejo el link directo :(](https://registry.terraform.io/providers/hashicorp/google/latest/docs/resources/compute_instance)
+6. Desplegar Infraestructura
 
-### 4 Configurando la Subnetwork
-1. Buscar en el menú izquierdo el recurso referente a subnetwork.
+
+# Sección 4.2 (En BreakRooms)
+1. Crear un archivo llamado `terraform.tfvars` y asignar valor a las variables del archivo `main.tf`
+  > **Note**
+  > Favor de eliminar las lineas `default = `  de cada variable del archivo `main.tf`<br/>
+  El archivo `.gitignore` ya existe en el repo, no es necesario modificarlo
+2. Reorganizar el *configuration file* `main.tf` en los distintos archivos vistos en clase
+![Diagrama de archivos](assets/diagrama.png?raw=true "Diagrama")
+3. Al aplicar un `terraform plan` debería salir que no hay ningún cambio por hacer.
+
+
+# Guardar evidencia (En grupo)
 > **Note**
-> Todo lo referente a *VPC networks* y *subnetworks* se encuentra en el apartado de Compute Engine
-2. Agregar en el archivo **main.tf** la configuración para crear una subnetwork (utilizar solo *argumentos requeridos*)
-  - Llenar los siguientes campos de la siguiente manera:
-    - Nombrar la Subnetwork utilizando la variable prefix que se encuentra en el archivo maint.tf de tal forma que el nombre final quede de la siguiente manera: **TU_USERNAME-subnetwork**
-    > **Note**
-    > En terraform podemos concatenar texto y variables: "${var.variable}-subnetwork"
-    - region: "us-east4"
-    - ip_cidr_range: "10.0.10.0/24"
-    - network: **Aplicar el uso del attribute de la vpc**
-
-### 5 Crear output
-1. Crear 2 output. Uno que devuelva el nombre de la subnetwork y otro el segmento de red.
-
-### 6 Creando la infraestructura
-1. Ejecutar los comandos de Terraform necesarios para crear la infraestructura.
-
-### 7 Limpiar archivos
-Eliminar el repositorio clonado<br/>
-`cd ..`<br/>
-`rm -rf actividad1`
+> Sólo el líder de cada breakroom
+1. Crear un repositorio en Github
+2. Subir el proyecto de Terraform al repositorio de Github que creaste.
+3. Agregar al repositorio a tus compañeros de breakroom y a los siguientes usuarios `mavera@liverpool.com.mx`, `shermidar@liverpool.com.mx` y `eczepedah@liverpool.com.mx`

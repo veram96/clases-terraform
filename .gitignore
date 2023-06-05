@@ -1,1 +1,8 @@
+# Evitar subir información sensible e inecesaria de proyecto de Terraform
+**/.terraform/*
+*.tfstate
+*.tfstate.*
+*.tfvars
+
+# Ignorar la siguiente linea
 ponente
